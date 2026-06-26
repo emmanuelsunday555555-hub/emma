@@ -20,9 +20,6 @@ nav{
 }
 ul{
     gap: 8rem;
-    position:absolute;
-    display: none;
-    list-style: none;
 }
 a{
     color: black;
@@ -45,34 +42,11 @@ p{
 .logo img{
     max-width: 60px;
 }
-
-.hamburger{
-    display: none;
-    flex-direction: column;
-}
-.hamburger span{
-    background-color: black;
-    width: 30px;
-    height: 5px;
-    margin: 5px;
-}
-
-/*mobile view*/
-@media(max-width:768px){
-   .hamburger{
-    display: flex;
-   }
-   .emman{
-    display: none;
-    flex-direction: column;
-    width: 100px;
-    position: absolute;
-   }
-
-   ul.show {
-    display: flex;
-   }
-   li{
-    list-style: none;
-   }
+.btn-signup{
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
