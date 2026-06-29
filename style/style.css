@@ -1,78 +1,119 @@
+/* Reset default browser styles */
 *{
     margin: 0;
     padding: 0;
 }
- header{
-    
+
+/* Header */
+header{
     background-color: white;
     padding: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display:flex;
+
+    display: flex;
+    justify-content: space-between;   /* Correction: Pushes logo to the left and navigation to the right */
     align-items: center;
 }
-nav ul{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-}
+
+/* Navigation */
 nav{
-    margin-left: 300px;
+    /* Correction: Removed margin-left:300px because it breaks responsiveness.
+       The header's justify-content handles spacing instead. */
 }
-ul{
-    gap: 8rem;
-    position:absolute;
-    display: none;
+
+/* Desktop Navigation Menu */
+nav ul{
+    display: flex;          /* Show menu on desktop */
+    gap: 2rem;              /* Correction: Reduced gap from 8rem to a more reasonable spacing */
     list-style: none;
 }
+
+/* Correction:
+   Removed the old 'ul' selector that contained:
+   display: none;
+   because it was hiding ALL unordered lists on every screen.
+*/
+
+/* Links */
 a{
     color: black;
     text-decoration: none;
-
 }
+
+/* Main Heading */
 h1{
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 25px;
 }
+
+/* Paragraph */
 p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
 }
+
+/* Logo */
 .logo{
-   justify-items: center;
+    display: flex;      
+    align-items: center;
 }
 
 .logo img{
     max-width: 60px;
 }
 
+/* Hamburger Icon */
 .hamburger{
-    display: none;
+    display: none;      /* Hidden on desktop */
     flex-direction: column;
+    cursor: pointer;    /* Correction: Shows pointer when hovering */
 }
+
 .hamburger span{
     background-color: black;
     width: 30px;
     height: 5px;
-    margin: 5px;
+    margin: 4px 0;
 }
 
-/*mobile view*/
-@media(max-width:768px){
-   .hamburger{
-    display: flex;
-   }
-   .emman{
-    display: none;
-    flex-direction: column;
-    width: 100px;
-    position: absolute;
-   }
+/* ===========================
+   Mobile View
+=========================== */
 
-   ul.show {
-    display: flex;
-   }
-   li{
-    list-style: none;
-   }
+@media (max-width:768px){
+
+    /* Show hamburger icon */
+    .hamburger{
+        display: flex;
+    }
+
+    /* Hide menu by default on mobile */
+    .emman{
+        display: none;
+        flex-direction: column;
+
+        position: absolute;
+        top: 80px;
+        right: 20px;
+
+        width: 180px;
+        padding: 15px;
+
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        gap: 15px;
+    }
+
+    /* Correction:
+       The JavaScript toggles the "show" class.
+       When it is added, the menu becomes visible.
+    */
+    .emman.show{
+        display: flex;
+    }
+
+    li{
+        list-style: none;
+    }
 }
