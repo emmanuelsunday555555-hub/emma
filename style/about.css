@@ -50,3 +50,33 @@ p{
     text-decoration: none;
     font-weight: bold;
 }
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+}
+.hamburger span{
+    background-color: black;
+    width: 30px;
+    height: 5px;
+    margin: 5px;
+}
+/*mobile view*/
+@media(max-width:768px){
+   .hamburger{
+    display: flex;
+   }
+   .emman{
+    display: none;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+   }
+
+   ul.show {
+    display: flex;
+   }
+   li{
+    list-style: none;
+   }
+}
